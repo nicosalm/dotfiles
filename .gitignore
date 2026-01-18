@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+.env*
+secrets/
+*.swp
+*.swo
+*~
+nvim/plugin/packer_compiled.lua
