@@ -40,7 +40,7 @@ function module.apply_to_config(config)
         {
             mods = 'LEADER',
             key = '0',
-            action = act.paneselect {
+            action = act.PaneSelect {
                 mode = 'Activate',
             },
         },
