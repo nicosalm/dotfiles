@@ -27,6 +27,7 @@ alias py="python3"
 alias pyi="pyinstrument"
 alias r='radian'
 alias wipetmp='setopt nonomatch; rm -rf /Users/nicosalm/tmp/{*,.*} 2>/dev/null; unsetopt nonomatch'
+alias preview="open -a Preview"
 
 rgd() {
     rg --json -C 2 "$@" | delta
