@@ -66,7 +66,26 @@ autocmd({ "BufWinEnter" }, {
     group = augroup("statusline_git_branch", { clear = true }),
     callback = function()
         local file_path = vim.fn.expand("%:p:h")
-        local branch = vim.trim(vim.fn.system("git -C " .. file_path .. " branch --show-current 2>/dev/null"))
-        vim.b.git_branch = #branch > 0 and string.format("git:(%s)", branch) or ""
+        local stdout = vim.uv.new_pipe(false)
+        local chunks = {}
+        local handle
+        handle = vim.uv.spawn("git", {
+            args = { "-C", file_path, "branch", "--show-current" },
+            stdio = { nil, stdout, nil },
+        }, function()
+            stdout:close()
+            if handle then handle:close() end
+            local branch = vim.trim(table.concat(chunks))
+            vim.schedule(function()
+                vim.b.git_branch = #branch > 0 and string.format("git:(%s)", branch) or ""
+            end)
+        end)
+        if handle then
+            stdout:read_start(function(err, data)
+                if not err and data then table.insert(chunks, data) end
+            end)
+        else
+            stdout:close()
+        end
     end,
 })

@@ -1,7 +1,10 @@
+local servers = { "lua_ls", "clangd", "rust_analyzer", "ts_ls", "basedpyright", "ruff" }
+
 return {
     {
         "saghen/blink.cmp",
         version = "1.*",
+        lazy = true,
         opts = {
             keymap = {
                 preset = "default",
@@ -15,8 +18,24 @@ return {
         },
     },
     {
+        "mason-org/mason.nvim",
+        cmd = "Mason",
+        build = ":MasonUpdate",
+        opts = {},
+    },
+    {
+        "mason-org/mason-lspconfig.nvim",
+        dependencies = { "mason-org/mason.nvim" },
+        event = { "BufReadPre", "BufNewFile" },
+        opts = {
+            ensure_installed = servers,
+            automatic_enable = false, -- we call vim.lsp.enable manually
+        },
+    },
+    {
         "neovim/nvim-lspconfig",
-        dependencies = { "saghen/blink.cmp" },
+        dependencies = { "saghen/blink.cmp", "mason-org/mason-lspconfig.nvim" },
+        event = { "BufReadPre", "BufNewFile" },
         config = function()
             vim.lsp.config("*", {
                 capabilities = require("blink.cmp").get_lsp_capabilities(),
@@ -37,7 +56,7 @@ return {
                 },
             })
 
-            vim.lsp.enable({ "lua_ls", "clangd", "rust_analyzer", "ts_ls", "basedpyright", "ruff" })
+            vim.lsp.enable(servers)
         end,
     },
 }

@@ -9,6 +9,7 @@ return {
             "nvim-neotest/neotest-plenary",
             "nvim-neotest/nvim-nio",
         },
+        keys = { "<leader>tc", "<leader>tf" },
         config = function()
             local neotest = require("neotest")
             neotest.setup({
