@@ -1,19 +1,22 @@
 return {
 
-    { "nvim-lua/plenary.nvim", name = "plenary" },
+    {
+        "blazkowolf/gruber-darker.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = { italic = { strings = false, comments = true } },
+    },
+
     { 'wakatime/vim-wakatime', lazy = false },
     "andweeb/presence.nvim",
     "tpope/vim-commentary",
     {
-        "norcalli/nvim-colorizer.lua",
+        "NvChad/nvim-colorizer.lua",
         config = function()
-            require 'colorizer'.setup {
-                'css';
-                'javascript';
-                html = {
-                    mode = 'foreground';
-                }
-            }
+            require("colorizer").setup({
+                filetypes = { "css", "javascript", "html" },
+                user_default_options = { mode = "background" },
+            })
         end,
     },
 
@@ -26,21 +29,11 @@ return {
     "tpope/vim-surround",
 
     {
-        "smjonas/inc-rename.nvim",
-        config = function()
-            require("inc_rename").setup()
-        end,
-    },
-    {
         'saecki/crates.nvim',
         tag = 'stable',
         config = function()
             require('crates').setup()
         end,
     },
-
-    vim.keymap.set("n", "<leader>rn", function()
-        return ":IncRename " .. vim.fn.expand("<cword>")
-    end, { expr = true })
 
 }
