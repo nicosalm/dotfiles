@@ -1,0 +1,38 @@
+font-family = FiraCode Nerd Font
+font-size = 17
+font-thicken = true
+
+background = #161616
+foreground = #ffffff
+palette = 0=#161616
+palette = 1=#ee5396
+palette = 2=#42be65
+palette = 3=#ffe97b
+palette = 4=#0f62fe
+palette = 5=#be95ff
+palette = 6=#3ddbd9
+palette = 7=#ffffff
+palette = 8=#262626
+palette = 9=#ff7eb6
+palette = 10=#42be65
+palette = 11=#ffe97b
+palette = 12=#78a9ff
+palette = 13=#be95ff
+palette = 14=#08bdba
+palette = 15=#ffffff
+
+window-width = 100
+window-height = 40
+maximize = true
+window-theme = dark
+window-padding-x = 10
+window-padding-y = 12
+macos-titlebar-style = hidden
+
+cursor-style = block
+cursor-style-blink = false
+
+shell-integration = zsh
+shell-integration-features = no-cursor
+
+keybind = cmd+shift+k=clear_screen
