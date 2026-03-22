@@ -47,10 +47,10 @@ fi
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='
   --height 40% --layout=reverse --border
-  --color=fg:#00ffff,bg:#000000,hl:#ff00ff
-  --color=fg+:#00ffff,bg+:#005f5f,hl+:#ff00ff
-  --color=info:#00ff00,prompt:#00ffff,pointer:#ff00ff
-  --color=marker:#00ff00,spinner:#ff00ff,header:#00ffff'
+  --color=fg:#ffffff,bg:#161616,hl:#3ddbd9
+  --color=fg+:#ffffff,bg+:#262626,hl+:#3ddbd9
+  --color=info:#78a9ff,prompt:#42be65,pointer:#ee5396
+  --color=marker:#42be65,spinner:#be95ff,header:#78a9ff'
 
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
