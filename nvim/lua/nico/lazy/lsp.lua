@@ -2,6 +2,24 @@ local servers = { "lua_ls", "clangd", "rust_analyzer", "ts_ls", "basedpyright", 
 
 return {
     {
+        "rmagatti/goto-preview",
+        event = "LspAttach",
+        opts = {
+            default_mappings = false,
+            post_open_hook = function(buf, _)
+                local close = function() require("goto-preview").close_all_win() end
+                vim.keymap.set("n", "<Esc>", close, { buffer = buf })
+                vim.keymap.set("n", "q", close, { buffer = buf })
+            end,
+        },
+        keys = {
+            { "<leader>pd", function() require("goto-preview").goto_preview_definition() end, desc = "Peek definition" },
+            { "<leader>pt", function() require("goto-preview").goto_preview_type_definition() end, desc = "Peek type definition" },
+            { "<leader>pc", function() require("goto-preview").close_all_win() end, desc = "Close peek windows" },
+        },
+    },
+
+    {
         "saghen/blink.cmp",
         version = "1.*",
         lazy = true,
@@ -10,6 +28,7 @@ return {
                 preset = "default",
                 ["<S-j>"] = { "select_next", "fallback" },
                 ["<S-k>"] = { "select_prev", "fallback" },
+                ["<Tab>"] = { "snippet_forward", "accept", "fallback" },
             },
             sources = { default = { "lsp", "path", "buffer" } },
             completion = {

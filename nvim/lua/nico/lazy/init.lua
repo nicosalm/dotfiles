@@ -8,13 +8,7 @@ return {
     },
     { "nyoom-engineering/oxocarbon.nvim", lazy = true },
 
-    { 'wakatime/vim-wakatime', lazy = false },
-    {
-        "vyfor/cord.nvim",
-        lazy = false,
-        build = ":Cord update",
-        opts = {},
-    },
+    { "wakatime/vim-wakatime", lazy = false },
     {
         "NvChad/nvim-colorizer.lua",
         ft = { "css", "javascript", "html" },
@@ -37,12 +31,11 @@ return {
     "tpope/vim-sleuth",
 
     {
-        'saecki/crates.nvim',
-        tag = 'stable',
+        "saecki/crates.nvim",
+        tag = "stable",
         ft = "toml",
         config = function()
-            require('crates').setup()
+            require("crates").setup()
         end,
     },
-
 }

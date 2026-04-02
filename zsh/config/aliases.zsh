@@ -6,6 +6,8 @@ alias ......='cd ../../../../..'
 alias ~='cd ~'
 alias -- -='cd -'
 
+alias t='tmux'
+
 alias createlog='cd /Users/nicosalm/dev/salm.dev && ./create-log.sh'
 
 alias ez='nvim ~/.config/zsh/'
@@ -25,9 +27,9 @@ alias ff='fastfetch'
 alias pn='pnpm'
 alias py="python3"
 alias pyi="pyinstrument"
-alias r='radian'
 alias wipetmp='setopt nonomatch; rm -rf /Users/nicosalm/tmp/{*,.*} 2>/dev/null; unsetopt nonomatch'
 alias preview="open -a Preview"
+
 
 rgd() {
     rg --json -C 2 "$@" | delta
