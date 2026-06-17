@@ -1,29 +1,32 @@
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-ZSH_HIGHLIGHT_STYLES[command]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[function]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[path]='fg=green'
-ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=green'
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[rc-quote]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[assign]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[redirection]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[comment]='fg=blue'
-ZSH_HIGHLIGHT_STYLES[arg0]='fg=cyan'
+ZSH_SYNTAX_HIGHLIGHTING="${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if [ -f "$ZSH_SYNTAX_HIGHLIGHTING" ]; then
+    source "$ZSH_SYNTAX_HIGHLIGHTING"
+    ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+    ZSH_HIGHLIGHT_STYLES[command]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[builtin]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[function]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
+    ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[path]='fg=green'
+    ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=green'
+    ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[rc-quote]='fg=magenta'
+    ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[assign]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[redirection]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[comment]='fg=blue'
+    ZSH_HIGHLIGHT_STYLES[arg0]='fg=cyan'
+fi
 
 
 autoload -U up-line-or-beginning-search

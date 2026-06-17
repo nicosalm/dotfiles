@@ -8,10 +8,14 @@ return {
 
         require('nvim-treesitter.configs').setup({
             ensure_installed = {
-                "c", "cpp", "typescript", "javascript", "lua", "rust", "python", "bash",
+                "c", "cpp", "typescript", "tsx", "javascript", "lua", "rust", "python", "bash",
+                "markdown", "markdown_inline",
             },
             sync_install = false,
-            auto_install = true,
+            -- Disabled: auto_install spawns a curl+tar job per previewed file
+            -- (e.g. fff.nvim previews on <leader>pf), and concurrent jobs race on
+            -- the shared parser cache, producing spurious tar extraction errors.
+            auto_install = false,
             indent = { enable = true },
             highlight = {
                 enable = true,
