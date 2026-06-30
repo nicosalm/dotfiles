@@ -30,7 +30,7 @@ return {
                 ["<S-k>"] = { "select_prev", "fallback" },
                 ["<Tab>"] = { "snippet_forward", "accept", "fallback" },
             },
-            sources = { default = { "lsp", "path", "buffer" } },
+            sources = { default = { "lazydev", "lsp", "path", "buffer" } },
             completion = {
                 documentation = { auto_show = true, auto_show_delay_ms = 200 },
             },
