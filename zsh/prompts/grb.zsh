@@ -49,7 +49,7 @@ prompt_grb_setup() {
     else
       verbose=1
     fi
-  
+
     typeset -A colorcode
     colorcode[black]=0
     colorcode[red]=1
@@ -69,7 +69,7 @@ prompt_grb_setup() {
     colorcode[c]=$colorcode[cyan]
     colorcode[w]=$colorcode[white]
     colorcode[.]=$colorcode[default]
-  
+
     typeset -A attcode
     attcode[none]=00
     attcode[bold]=01
@@ -85,7 +85,7 @@ prompt_grb_setup() {
     attcode[no-blink]=25
     attcode[no-reverse]=27
     attcode[no-conceal]=28
-  
+
     local -A pc
     pc[default]='default'
     pc[date]='Cyan'
@@ -123,7 +123,7 @@ prompt_grb_setup() {
     wunjo_prompt_colors=(${(kv)pc})
 
     PROMPT="$pc[reset]"
-    PROMPT+="$pc[host]nico$pc[reset]@$pc[user]mbp$pc[reset]::"
+    PROMPT+="$pc[host]nico$pc[reset]@$pc[user]abbv$pc[reset]::"
     PROMPT+="$pc[shortpath]%1~$pc[reset]"
     PROMPT+="\$(prompt_grb_scm_branch)"
     PROMPT+=" $pc[#]%#$pc[reset] "
@@ -150,27 +150,27 @@ prompt_grb_scm_branch() {
     pc=(${(kv)wunjo_prompt_colors})
 
     echo -n "($pc[punc]$pc[scm_branch]$(zgit_head)"
-    
+
     if zgit_inworktree; then
         local -a dirty_indicators
-        
+
         if ! zgit_isindexclean; then
             dirty_indicators+='+'  # staged changes
         fi
-        
+
         if ! zgit_isworktreeclean; then
             dirty_indicators+='!'  # unstaged changes
         fi
-        
+
         if zgit_hasuntracked; then
             dirty_indicators+='?'  # untracked files
         fi
-        
+
         if [ $#dirty_indicators -gt 0 ]; then
             echo -n "$pc[scm_status_dirty]${(j::)dirty_indicators}"
         fi
     fi
-    
+
     echo -n "$pc[reset])"
 }
 
