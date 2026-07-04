@@ -30,7 +30,16 @@ return {
                 ["<S-k>"] = { "select_prev", "fallback" },
                 ["<Tab>"] = { "snippet_forward", "accept", "fallback" },
             },
-            sources = { default = { "lazydev", "lsp", "path", "buffer" } },
+            sources = {
+                default = { "lazydev", "lsp", "path", "buffer" },
+                providers = {
+                    lazydev = {
+                        name = "LazyDev",
+                        module = "lazydev.integrations.blink",
+                        score_offset = 100,
+                    },
+                },
+            },
             completion = {
                 documentation = { auto_show = true, auto_show_delay_ms = 200 },
             },
