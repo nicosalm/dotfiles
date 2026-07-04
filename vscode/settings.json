@@ -4,9 +4,12 @@
   "workbench.editor.showTabs": "single",
   "workbench.editor.empty.hint": "hidden",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.preferredLightColorTheme": "Dark Modern",
   "window.zoomLevel": 0.9,
   "window.newWindowDimensions": "inherit",
+  "window.autoDetectColorScheme": true,
   "update.showReleaseNotes": false,
+  "update.mode": "none",
 
   "editor.fontFamily": "Comic Code",
   "editor.fontLigatures": true,
@@ -172,6 +175,9 @@
   "svelte.enable-ts-plugin": true,
   "markdown-preview-enhanced.previewTheme": "atom-dark.css",
 
+  "sqldeveloper.telemetry.enabled": false,
+  "sqldeveloper.datagrid.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+
   "remote.SSH.showLoginTerminal": true,
   "remote.SSH.lockfilesInTmp": true,
   "remote.SSH.useFlock": false,
@@ -205,11 +211,13 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "python.languageServer": "None",
   "[python]": {
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.wordBasedSuggestions": "off",
     "editor.formatOnType": true,
     "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": { "source.organizeImports.ruff": "explicit" },
   },
 
   "vim.leader": "<space>",

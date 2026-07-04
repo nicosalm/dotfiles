@@ -25,6 +25,7 @@ alias v='nvim'
 alias c='clear'
 alias ff='fastfetch'
 alias pn='pnpm'
+alias nvm='fnm'
 alias py="python3"
 alias pyi="pyinstrument"
 alias wipetmp='setopt nonomatch; rm -rf /Users/nicosalm/tmp/{*,.*} 2>/dev/null; unsetopt nonomatch'
