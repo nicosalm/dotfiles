@@ -9,6 +9,12 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[alias]
+	s = status --short --branch
+	lg = log --oneline --graph --decorate
+	last = log -1 --stat
+	unstage = restore --staged
+	amend = commit --amend --no-edit
 [pull]
 	rebase = true
 [rebase]
