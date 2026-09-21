@@ -33,6 +33,7 @@ link zsh        "$HOME/.config/zsh"
 link nvim       "$HOME/.config/nvim"
 link tmux       "$HOME/.config/tmux"
 link ghostty    "$HOME/.config/ghostty"
+link git/gitconfig "$HOME/.gitconfig"
 
 echo
 echo "Done. Open a new shell, or run: exec zsh"

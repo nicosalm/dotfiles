@@ -1,0 +1,17 @@
+[user]
+	name = Nico Salm
+	email = nico@salm.dev
+[includeIf "gitdir:~/abbvie/"]
+	path = ~/.gitconfig-abbvie
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[push]
+	autoSetupRemote = true
